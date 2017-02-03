@@ -1,0 +1,173 @@
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_face.xnb
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_left.xnb
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_right.xnb
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_idea.xnb
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_copy_default.xnb
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_copy_custom.xnb
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe.config
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.pdb
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.dll
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.dll
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.xml
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.xml
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.exe
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.pdb
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectProject.csprojResolveAssemblyReference.cache
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_face.xnb
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_left.xnb
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_right.xnb
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_idea.xnb
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_copy_default.xnb
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_20.xnb
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe.config
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.pdb
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.dll
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.dll
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.xml
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.xml
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectProject.csprojResolveAssemblyReference.cache
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.exe
+C:\Users\dbergman\Downloads\KristianKinect\WindowsGame1\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.pdb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_face.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_left.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_right.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_idea.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_copy_default.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_20.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe.config
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.pdb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectProject.csprojResolveAssemblyReference.cache
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.exe
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.pdb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_face.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_left.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_right.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_idea.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_copy_default.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_20.xnb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe.config
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.pdb
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectProject.csprojResolveAssemblyReference.cache
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.exe
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.pdb
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_face.xnb
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_left.xnb
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_right.xnb
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_idea.xnb
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_copy_default.xnb
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_20.xnb
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe.config
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.pdb
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.dll
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.dll
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.dll
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.xml
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.xml
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.xml
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.xml
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectProject.csprojResolveAssemblyReference.cache
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.exe
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.pdb
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_face.xnb
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_left.xnb
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_right.xnb
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\image_idea.xnb
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_copy_default.xnb
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\font_20.xnb
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe.config
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.exe
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\KinectDemo.pdb
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.dll
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.dll
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.dll
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.dll
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Kinect.xml
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.xml
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.xml
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.xml
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectProject.csprojResolveAssemblyReference.cache
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.exe
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectDemo.pdb

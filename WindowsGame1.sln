@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinectProject", "WindowsGame1\WindowsGame1\KinectProject.csproj", "{608647E7-F6CE-427D-92C1-AD99CBF5D5E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "WindowsGame1\WindowsGame1Content\Resources.contentproj", "{FB9FA373-AFA5-4B26-8ACF-5D1D8CDFD997}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{608647E7-F6CE-427D-92C1-AD99CBF5D5E3}.Debug|x86.ActiveCfg = Debug|x86
+		{608647E7-F6CE-427D-92C1-AD99CBF5D5E3}.Debug|x86.Build.0 = Debug|x86
+		{608647E7-F6CE-427D-92C1-AD99CBF5D5E3}.Release|x86.ActiveCfg = Release|x86
+		{608647E7-F6CE-427D-92C1-AD99CBF5D5E3}.Release|x86.Build.0 = Release|x86
+		{FB9FA373-AFA5-4B26-8ACF-5D1D8CDFD997}.Debug|x86.ActiveCfg = Debug|x86
+		{FB9FA373-AFA5-4B26-8ACF-5D1D8CDFD997}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

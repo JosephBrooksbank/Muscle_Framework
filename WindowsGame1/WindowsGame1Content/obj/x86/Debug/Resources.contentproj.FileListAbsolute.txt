@@ -1,0 +1,5 @@
+C:\Users\Administrator\Desktop\ForDoug\WindowsGame1\WindowsGame1\WindowsGame1Content\obj\x86\Debug\Resources.contentprojResolveAssemblyReference.cache
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinect\Kinect\WindowsGame1\WindowsGame1Content\obj\x86\Debug\Resources.contentprojResolveAssemblyReference.cache
+C:\Users\dbergman\Google Drive\Cmp 3 public\PROJECTS TO SHOW\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1Content\obj\x86\Debug\Resources.contentprojResolveAssemblyReference.cache
+Z:\PROJECTS KINECT\KristianKinectStarter\Kinect\WindowsGame1\WindowsGame1Content\obj\x86\Debug\Resources.contentprojResolveAssemblyReference.cache
+D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1Content\obj\x86\Debug\Resources.contentprojResolveAssemblyReference.cache
