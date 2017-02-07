@@ -1,4 +1,5 @@
 using System;
+using KinectDemo.Scripts;
 
 namespace MyKinectGame
 {

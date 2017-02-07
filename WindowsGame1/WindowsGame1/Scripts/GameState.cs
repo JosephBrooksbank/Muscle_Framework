@@ -16,7 +16,7 @@ namespace MyKinectGame
 
         public static GameState ActiveState;
 
-        private static Dictionary<string, GameState> GameStates = new Dictionary<string, GameState>();
+        private static Dictionary<string, GameState> _gameStates = new Dictionary<string, GameState>();
 
         /// <summary>
         /// Adds a new game state.
@@ -37,13 +37,13 @@ namespace MyKinectGame
                 OnUpdate = updateHandler
             };
 
-            if (GameStates.ContainsKey(name))
+            if (_gameStates.ContainsKey(name))
             {
-                GameStates[name] = state;
+                _gameStates[name] = state;
             }
             else
             {
-                GameStates.Add(name, state);
+                _gameStates.Add(name, state);
             }
         }
 
@@ -53,13 +53,13 @@ namespace MyKinectGame
         /// <param name="name">The name of the state to activate.</param>
         public static void Set(string name)
         {
-            if (!GameStates.ContainsKey(name))
+            if (!_gameStates.ContainsKey(name))
                 return;
 
             if (ActiveState != null && ActiveState.IsActive)
                 ActiveState.Deactivate();
 
-            ActiveState = GameStates[name];
+            ActiveState = _gameStates[name];
             ActiveState.Activate();
         }
 
@@ -69,10 +69,10 @@ namespace MyKinectGame
         /// <param name="name">The name of the state to return.</param>
         public static GameState Get(string name)
         {
-            if (!GameStates.ContainsKey(name))
+            if (!_gameStates.ContainsKey(name))
                 return null;
 
-            return GameStates[name];
+            return _gameStates[name];
         }
 
         /// <summary>
@@ -80,14 +80,14 @@ namespace MyKinectGame
         /// </summary>
         public static string[] GetStates()
         {
-            return GameStates.Keys.ToArray();
+            return _gameStates.Keys.ToArray();
         }
 
         public static void Complete(string nextState)
         {
             if (ActiveState == null)
                 return;
-            if (ActiveState.completed)
+            if (ActiveState._completed)
                 return;
 
             if (OnStateConditionCompleted != null)
@@ -134,14 +134,14 @@ namespace MyKinectGame
 
         public string Name = string.Empty;
 
-        private bool initialized = false;
-        private bool completed = false;
+        private bool _initialized = false;
+        private bool _completed = false;
 
         public void Activate()
         {
-            if (!initialized)
+            if (!_initialized)
             {
-                initialized = true;
+                _initialized = true;
 
                 if (OnInit != null)
                 {
