@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using Microsoft.Kinect;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -67,8 +68,12 @@ namespace MyKinectGame
             //Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello Title Screen ", new Vector2(20, 200), defaultColor);
             Renderer.DrawString(Resources.Fonts.Load("font_20"), "Welcome to [Game] ", new Vector2(20, 200),
                 defaultColor);
-            if (IsTouching(JointType.HandLeft, JointType.Head))
-                Renderer.DrawString(Resources.Fonts.Load("font_20"), "Left hand is over head!", new Vector2(20, 300), defaultColor);
+            if (Skeletons != null) {
+                if (IsTouching(JointType.HandLeft, JointType.Head))
+                    Renderer.DrawString(Resources.Fonts.Load("font_20"), "Left hand is over head!", new Vector2(20, 300), defaultColor);
+            }
+               
+
 
         }
 
@@ -100,6 +105,12 @@ namespace MyKinectGame
         }
 
         public static bool IsTouching(JointType joint1, JointType joint2) {
+
+            if (GetJointPosition(joint1, ScreenSpace.World) == Vector3.Zero) {
+                return false;
+            }
+                
+           
             return
                 Vector3.Distance(GetJointPosition(joint1, ScreenSpace.World),
                     GetJointPosition(joint2, ScreenSpace.World)) < 60f;
@@ -122,15 +133,15 @@ namespace MyKinectGame
             // If the skeleton provided is null then grab the first available skeleton and use it:
             if (skeleton == null && instance.Skeletons != null && instance.Skeletons.Count > 0)
                 skeleton =
-                    instance.Skeletons.FirstOrDefault(
-                        o => o.Joints.Count > 0 && o.State == SkeletonTrackingState.Tracked);
+                    instance.Skeletons.FirstOrDefault(o => o.Joints.Count > 0 && o.State == SkeletonTrackingState.Tracked);
             else
                 return Vector3.Zero;
 
             if (type == ScreenSpace.Screen)
                 return skeleton.ScaleTo(joint, Screen.Width, Screen.Height);
-            return skeleton.ScaleTo(joint, Screen.Width, Screen.Height);
-            //  return skeleton.ScaleTo(joint, World.Width, World.Height);
+           // return skeleton.ScaleTo(joint, Screen.Width, Screen.Height);
+            if (skeleton != null) return skeleton.ScaleTo(joint, World.Width, World.Height);
+            return Vector3.Zero;
         }
 
         public float Interpolate(float a, float b, float speed) {
@@ -300,6 +311,8 @@ namespace MyKinectGame
 
             if (Keyboard.GetState().IsKeyDown(Keys.X))
                 Exit();
+          //  if (IsTouching(JointType.HandLeft, JointType.Head))
+           //     Renderer.DrawString(Resources.Fonts.Load("font_20"), "Left hand is over head!", new Vector2(20, 300), defaultColor);
 
             base.Update(gameTime);
         }
