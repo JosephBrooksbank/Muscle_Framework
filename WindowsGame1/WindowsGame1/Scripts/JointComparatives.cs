@@ -4,29 +4,74 @@ using Microsoft.Xna.Framework;
 
 namespace KinectDemo.Scripts {
     internal class JointComparatives : MyGame {
-        private JointType altJoint;
-        private JointType mainJoint;
-        private JointType[] otherJoints;
+        private JointType MainJoint;
+        private JointType[] OtherJoints;
 
+        /// <summary>
+        ///     Sets joints to be used for comparisons
+        /// </summary>
+        /// <param name="joint1"> The joint being focused on for comparisons</param>
+        /// <param name="otherjoints"> A list of all joints that the main joint is being compared against </param>
         public void GetJointInfo(JointType joint1, params JointType[] otherjoints) {
-            mainJoint = joint1;
-            otherJoints = otherjoints;
+            MainJoint = joint1;
+            OtherJoints = otherjoints;
         }
 
-        public void GetJointInfo(JointType joint1, JointType joint2) {
-            mainJoint = joint1;
-            altJoint = joint2;
-        }
-
+        /// <summary>
+        ///     Checks to see if the main joint is highest
+        /// </summary>
+        /// <returns> Whether or not main joint is highest </returns>
         public bool IsHighest() {
-            var highest = true;
-            foreach (var t in otherJoints)
-                if (GetJointPosition(mainJoint, ScreenSpace.Screen).Y < GetJointPosition(t, ScreenSpace.Screen).Y)
-                    highest = false;
-            return highest;
+            var Highest = true;
+            foreach (var T in OtherJoints)
+                if (GetJointPosition(MainJoint, ScreenSpace.Screen).Y > GetJointPosition(T, ScreenSpace.Screen).Y)
+                    Highest = false;
+            return Highest;
         }
 
+        /// <summary>
+        ///     Checks to see if main joint is lowest
+        /// </summary>
+        /// <returns> Whether or not main joint is lowest </returns>
+        public bool IsLowest() {
+            var Lowest = true;
+            foreach (var T in OtherJoints)
+                if (GetJointPosition(MainJoint, ScreenSpace.Screen).Y < GetJointPosition(T, ScreenSpace.Screen).Y)
+                    Lowest = false;
+            return Lowest;
+        }
 
+        /// <summary>
+        ///     Checks to see if the main joint is farthest left
+        /// </summary>
+        /// <returns> Whether or not main joint is farthest left </returns>
+        public bool IsFarthestLeft() {
+            var Farthest = true;
+            foreach (var T in OtherJoints)
+                if (GetJointPosition(MainJoint, ScreenSpace.Screen).X > GetJointPosition(T, ScreenSpace.Screen).X)
+                    Farthest = false;
+            return Farthest;
+        }
+
+        /// <summary>
+        ///     Checks to see if main joint is farthest right
+        /// </summary>
+        /// <returns> Whether or not main joint is farthest right </returns>
+        public bool IsFarthestRight() {
+            var Farthest = true;
+            foreach (var T in OtherJoints)
+                if (GetJointPosition(MainJoint, ScreenSpace.Screen).X < GetJointPosition(T, ScreenSpace.Screen).X)
+                    Farthest = false;
+            return Farthest;
+        }
+
+        /// <summary>
+        ///     Gets the position in a vector3 of a current joint
+        /// </summary>
+        /// <param name="joint"> The joint who's position is being checked </param>
+        /// <param name="type"> The space in which the value is calculated </param>
+        /// <param name="skeleton"> The skeleton which the joint is a part of</param>
+        /// <returns> The position of a joint </returns>
         public static Vector3 GetJointPosition(JointType joint, ScreenSpace type, CustomSkeleton skeleton = null) {
             // if (Instance == null)
             //     return Vector3.Zero;

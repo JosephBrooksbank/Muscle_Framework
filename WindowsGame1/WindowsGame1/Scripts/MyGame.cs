@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using Microsoft.Kinect;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MyKinectGame;
+
 namespace KinectDemo.Scripts {
     public class MyGame : Game {
         /**********************************************************************************************/
@@ -47,7 +47,7 @@ namespace KinectDemo.Scripts {
         // GameState Handlers:
 
 
-        private readonly Color _defaultColor = Color.Black;
+        private readonly Color DefaultColor = Color.Black;
 
 
         /**********************************************************************************************/
@@ -65,17 +65,17 @@ namespace KinectDemo.Scripts {
 
         public void OnUpdate_TitleScreen() {
             //Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello Title Screen ", new Vector2(20, 200), defaultColor);
-            _renderer.DrawString(Resources.Fonts.Load("font_20"), "Welcome to [Game] ", new Vector2(20, 200),
-                _defaultColor);
-                if (IsTouching(JointType.HandLeft, JointType.Head))
-                    _renderer.DrawString(Resources.Fonts.Load("font_20"), "Left hand is over head!", new Vector2(20, 300),
-                        _defaultColor);
-                JointComparatives compareJoints = new JointComparatives();
-                compareJoints.GetJointInfo(JointType.HandLeft, JointType.AnkleLeft, JointType.AnkleRight, JointType.WristRight, JointType.Head);
-            if (compareJoints.IsHighest()) {
-                _renderer.DrawString(Resources.Fonts.Load("font_20"), "Left Hand is highest!!", new Vector2(40, 300),
-                        _defaultColor);
-            }
+            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Welcome to [Game] ", new Vector2(20, 200),
+                DefaultColor);
+            if (IsTouching(JointType.HandLeft, JointType.Head))
+                Renderer.DrawString(Resources.Fonts.Load("font_20"), "Left hand is over head!", new Vector2(20, 300),
+                    DefaultColor);
+            var CompareJoints = new JointComparatives();
+            CompareJoints.GetJointInfo(JointType.HandLeft, JointType.AnkleLeft, JointType.AnkleRight,
+                JointType.WristRight, JointType.Head);
+            if (CompareJoints.IsHighest())
+                Renderer.DrawString(Resources.Fonts.Load("font_20"), "Left Hand is highest!!", new Vector2(40, 300),
+                    DefaultColor);
         }
 
         public void OnEnter_TitleScreen() {
@@ -85,7 +85,7 @@ namespace KinectDemo.Scripts {
         }
 
         public void OnUpdate_Level1() {
-            _renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello LEVEL1 ", new Vector2(20, 200), _defaultColor);
+            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello LEVEL1 ", new Vector2(20, 200), DefaultColor);
         }
 
         public void OnEnter_Level1() {
@@ -93,7 +93,7 @@ namespace KinectDemo.Scripts {
 
         public void OnUpdate_Level2() {
             // Do something;
-            _renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello LEVEL 2 ", new Vector2(20, 200), _defaultColor);
+            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello LEVEL 2 ", new Vector2(20, 200), DefaultColor);
         }
 
         public void OnUpdate_Endscreen() {
@@ -101,8 +101,8 @@ namespace KinectDemo.Scripts {
         }
 
         public static Color GetRandomColor() {
-            var rand = new Random((int) DateTime.Now.Ticks);
-            return new Color((float) rand.NextDouble(), (float) rand.NextDouble(), (float) rand.NextDouble(), 1f);
+            var Rand = new Random((int) DateTime.Now.Ticks);
+            return new Color((float) Rand.NextDouble(), (float) Rand.NextDouble(), (float) Rand.NextDouble(), 1f);
         }
 
         public static bool IsTouching(JointType joint1, JointType joint2) {
@@ -123,23 +123,22 @@ namespace KinectDemo.Scripts {
         /// <param name="type"> The area to calculate for, either world or screen </param>
         /// <param name="skeleton">If not set then the first available skeleton will be selected.</param>
         /// <returns>The joint position.</returns>
-      /*  public static Vector3 GetJointPosition(JointType joint, ScreenSpace type, CustomSkeleton skeleton = null) {
-            if (Instance == null)
-                return Vector3.Zero;
-
-            // If the skeleton provided is null then grab the first available skeleton and use it:
-            if (skeleton == null && Instance.Skeletons != null && Instance.Skeletons.Count > 0)
-                skeleton =
-                    Instance.Skeletons.FirstOrDefault(
-                        o => o.Joints.Count > 0 && o.State == SkeletonTrackingState.Tracked);
-            else
-                return Vector3.Zero;
-
-            if (type == ScreenSpace.Screen)
-                return skeleton?.ScaleTo(joint, Screen.Width, Screen.Height) ?? Vector3.Zero;
-            return skeleton?.ScaleTo(joint, World.Width, World.Height) ?? Vector3.Zero;
-        }*/
-
+        /*  public static Vector3 GetJointPosition(JointType joint, ScreenSpace type, CustomSkeleton skeleton = null) {
+              if (Instance == null)
+                  return Vector3.Zero;
+  
+              // If the skeleton provided is null then grab the first available skeleton and use it:
+              if (skeleton == null && Instance.Skeletons != null && Instance.Skeletons.Count > 0)
+                  skeleton =
+                      Instance.Skeletons.FirstOrDefault(
+                          o => o.Joints.Count > 0 && o.State == SkeletonTrackingState.Tracked);
+              else
+                  return Vector3.Zero;
+  
+              if (type == ScreenSpace.Screen)
+                  return skeleton?.ScaleTo(joint, Screen.Width, Screen.Height) ?? Vector3.Zero;
+              return skeleton?.ScaleTo(joint, World.Width, World.Height) ?? Vector3.Zero;
+          }*/
         public float Interpolate(float a, float b, float speed) {
             return MathHelper.Lerp(a, b, DrawDelta * speed);
         }
@@ -148,8 +147,8 @@ namespace KinectDemo.Scripts {
             if (Skeletons == null)
                 return;
 
-            foreach (var skeleton in Skeletons)
-                DrawSkeleton(skeleton);
+            foreach (var Skeleton in Skeletons)
+                DrawSkeleton(Skeleton);
         }
 
         public void DrawSkeleton(CustomSkeleton skeleton) {
@@ -173,7 +172,7 @@ namespace KinectDemo.Scripts {
         }
 
         public void DrawJointConnection(CustomSkeleton skeleton, JointType joint1, JointType joint2) {
-            DrawLine(_renderer, 4, Color.Blue, JointToVector(skeleton, joint1), JointToVector(skeleton, joint2));
+            DrawLine(Renderer, 4, Color.Blue, JointToVector(skeleton, joint1), JointToVector(skeleton, joint2));
         }
 
         public void DrawLine(SpriteBatch spriteBatch, float width, Color color, Vector2 p1, Vector2 p2) {
@@ -187,7 +186,7 @@ namespace KinectDemo.Scripts {
                     if (Instance == null)
                         return 0;
 
-                    return Instance._graphicsManager.PreferredBackBufferWidth;
+                    return Instance.GraphicsManager.PreferredBackBufferWidth;
                 }
             }
 
@@ -196,7 +195,7 @@ namespace KinectDemo.Scripts {
                     if (Instance == null)
                         return 0;
 
-                    return Instance._graphicsManager.PreferredBackBufferHeight;
+                    return Instance.GraphicsManager.PreferredBackBufferHeight;
                 }
             }
         }
@@ -214,17 +213,17 @@ namespace KinectDemo.Scripts {
         }
 
         protected Vector2 JointToVector(CustomSkeleton skeleton, JointType type, int width, int height) {
-            var position = skeleton.ScaleTo(type, width, height);
-            return new Vector2(position.X, position.Y);
+            var Position = skeleton.ScaleTo(type, width, height);
+            return new Vector2(Position.X, Position.Y);
         }
 
         #endregion
 
         #region System
 
-        private readonly GraphicsDeviceManager _graphicsManager;
-        private SpriteBatch _renderer;
-        private KinectSensor _camera;
+        private readonly GraphicsDeviceManager GraphicsManager;
+        private SpriteBatch Renderer;
+        private KinectSensor Camera;
         public List<CustomSkeleton> Skeletons; //this array will hold all skeletons that are found in the video frame
 
         #endregion
@@ -232,7 +231,7 @@ namespace KinectDemo.Scripts {
         #region XNA Framework Overrides:
 
         public MyGame() {
-            _graphicsManager = new GraphicsDeviceManager(this) {
+            GraphicsManager = new GraphicsDeviceManager(this) {
                 PreferredBackBufferHeight = 600,
                 PreferredBackBufferWidth = 1200
             };
@@ -244,19 +243,19 @@ namespace KinectDemo.Scripts {
         protected override void Initialize() {
             // Set the instance so that it is available to other classes:
             Instance = this;
-            JointComparatives compareJoints = new JointComparatives();
+            var CompareJoints = new JointComparatives();
             // The Kinect has a built in system that handles 6 skeletons at once:
-           Skeletons = new List<CustomSkeleton>();
+            Skeletons = new List<CustomSkeleton>();
 
             // Find the Kinect Camera:
             if (KinectSensor.KinectSensors.Count > 0) {
-                _camera = KinectSensor.KinectSensors[0];
+                Camera = KinectSensor.KinectSensors[0];
 
-                if (_camera != null) {
+                if (Camera != null) {
                     // Initialize the Kinect sensor:
-                    _camera.SkeletonStream.Enable();
-                    _camera.Start();
-                    _camera.SkeletonStream.Enable(new TransformSmoothParameters {
+                    Camera.SkeletonStream.Enable();
+                    Camera.Start();
+                    Camera.SkeletonStream.Enable(new TransformSmoothParameters {
                         Smoothing = 0.5f,
                         Correction = 0.5f,
                         Prediction = 0.5f,
@@ -265,7 +264,7 @@ namespace KinectDemo.Scripts {
                     });
 
                     // When the camera senses a skeleton "event" in realtime , it pulls in new video frames that we can interpret:
-                    _camera.SkeletonFrameReady += OnSkeletonUpdated;
+                    Camera.SkeletonFrameReady += OnSkeletonUpdated;
                     DebugCamera = "Camera Connected!";
                 }
                 else {
@@ -282,14 +281,14 @@ namespace KinectDemo.Scripts {
         }
 
         protected override void LoadContent() {
-            _renderer = new SpriteBatch(GraphicsDevice);
+            Renderer = new SpriteBatch(GraphicsDevice);
 
             // KM - this was missing:
             base.LoadContent();
         }
 
         protected override void UnloadContent() {
-            _camera?.Stop();
+            Camera?.Stop();
 
             // KM - Release resources that were loaded when unloading:
             Resources.Unload();
@@ -320,14 +319,14 @@ namespace KinectDemo.Scripts {
 
             GraphicsDevice.Clear(Color.LightGray);
 
-            _renderer.Begin();
+            Renderer.Begin();
 
             if (ShowDebug) {
-                _renderer.DrawString(Resources.Fonts.Load("font_copy_custom"), DebugState, new Vector2(20, 20),
+                Renderer.DrawString(Resources.Fonts.Load("font_copy_custom"), DebugState, new Vector2(20, 20),
                     Color.Green);
-                _renderer.DrawString(Resources.Fonts.Load("font_copy_default"), DebugCamera, new Vector2(20, 50),
+                Renderer.DrawString(Resources.Fonts.Load("font_copy_default"), DebugCamera, new Vector2(20, 50),
                     Color.Blue);
-                _renderer.DrawString(Resources.Fonts.Load("font_copy_default"), DebugSkeleton, new Vector2(20, 80),
+                Renderer.DrawString(Resources.Fonts.Load("font_copy_default"), DebugSkeleton, new Vector2(20, 80),
                     Color.Red);
 
                 // Renders the Skeleton on screen for Debugging:
@@ -339,7 +338,7 @@ namespace KinectDemo.Scripts {
                 GameState.ActiveState.OnUpdate();
 
             // Complete the rendering of this frame:
-            _renderer.End();
+            Renderer.End();
 
             base.Draw(gameTime);
         }
@@ -366,12 +365,12 @@ namespace KinectDemo.Scripts {
             public void Set(Skeleton skeleton) {
                 State = skeleton.TrackingState;
 
-                foreach (Joint joint in skeleton.Joints) {
-                    var pos = new Vector3(joint.Position.X, -joint.Position.Y, joint.Position.Z);
-                    if (Joints.ContainsKey(joint.JointType))
-                        Joints[joint.JointType] = pos;
+                foreach (Joint Joint in skeleton.Joints) {
+                    var Pos = new Vector3(Joint.Position.X, -Joint.Position.Y, Joint.Position.Z);
+                    if (Joints.ContainsKey(Joint.JointType))
+                        Joints[Joint.JointType] = Pos;
                     else
-                        Joints.Add(joint.JointType, pos);
+                        Joints.Add(Joint.JointType, Pos);
                 }
             }
 
@@ -385,49 +384,49 @@ namespace KinectDemo.Scripts {
 
         private void OnSkeletonUpdated(object sender, SkeletonFrameReadyEventArgs e) {
             // The live feed returns updates from the camera:
-            var skeletonFrame = e.OpenSkeletonFrame();
-            if (skeletonFrame == null)
+            var SkeletonFrame = e.OpenSkeletonFrame();
+            if (SkeletonFrame == null)
                 return;
 
             // Add smoothing to prevent glitching in the skeletons' movements:
-            var raw = new Skeleton[6];
-            skeletonFrame.CopySkeletonDataTo(raw);
-            for (var i = 0; i < raw.Length; i++) {
-                if (raw[i] == null)
+            var Raw = new Skeleton[6];
+            SkeletonFrame.CopySkeletonDataTo(Raw);
+            for (var I = 0; I < Raw.Length; I++) {
+                if (Raw[I] == null)
                     continue;
 
-                if (Skeletons.Count <= i || Skeletons[i] == null) {
+                if (Skeletons.Count <= I || Skeletons[I] == null) {
                     // If this skeleton was just added then set it:
-                    var newSkeleton = new CustomSkeleton();
-                    newSkeleton.Set(raw[i]);
-                    Skeletons.Add(newSkeleton);
+                    var NewSkeleton = new CustomSkeleton();
+                    NewSkeleton.Set(Raw[I]);
+                    Skeletons.Add(NewSkeleton);
                     continue;
                 }
 
                 if (Smoothing > 0f) {
                     // Set the state of the skeleton:
-                    Skeletons[i].State = raw[i].TrackingState;
+                    Skeletons[I].State = Raw[I].TrackingState;
 
                     // Add smoothing interpolation to each point:
-                    foreach (Joint joint in raw[i].Joints) {
-                        var pos = new Vector3 {
-                            X = Interpolate(Skeletons[i].Joints[joint.JointType].X, joint.Position.X, Smoothing),
-                            Y = Interpolate(Skeletons[i].Joints[joint.JointType].Y, -joint.Position.Y, Smoothing),
-                            Z = Interpolate(Skeletons[i].Joints[joint.JointType].Z, joint.Position.Z, Smoothing)
+                    foreach (Joint Joint in Raw[I].Joints) {
+                        var Pos = new Vector3 {
+                            X = Interpolate(Skeletons[I].Joints[Joint.JointType].X, Joint.Position.X, Smoothing),
+                            Y = Interpolate(Skeletons[I].Joints[Joint.JointType].Y, -Joint.Position.Y, Smoothing),
+                            Z = Interpolate(Skeletons[I].Joints[Joint.JointType].Z, Joint.Position.Z, Smoothing)
                         };
 
-                        Skeletons[i].Joints[joint.JointType] = pos;
+                        Skeletons[I].Joints[Joint.JointType] = Pos;
                     }
                 }
                 else {
                     // Store the raw data for the skeleton:
-                    Skeletons[i].Set(raw[i]);
+                    Skeletons[I].Set(Raw[I]);
                 }
             }
 
-            skeletonFrame.Dispose();
+            SkeletonFrame.Dispose();
 
-            if (raw != null && raw.Any(o => o.TrackingState == SkeletonTrackingState.Tracked)) {
+            if (Raw != null && Raw.Any(o => o.TrackingState == SkeletonTrackingState.Tracked)) {
                 SkeletonActive = true;
                 DebugSkeleton = "Skeleton Found";
             }
