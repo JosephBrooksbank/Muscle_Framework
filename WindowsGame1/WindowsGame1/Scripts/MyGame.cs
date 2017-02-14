@@ -80,19 +80,19 @@ namespace KinectDemo.Scripts {
             if (LeftHandtoOthers.IsLowest())
                 DrawText("Left Hand is lowest", new Vector2(40, 300), DefaultColor);
 
-//            var RightHandtoBody = new JointComparatives();
-//            RightHandtoBody.GetJointInfo(JointType.HandRight, JointType.ShoulderRight, JointType.ElbowRight,
-//                JointType.HipRight, JointType.WristRight, JointType.AnkleRight, JointType.KneeRight);
-//            var LeftHandtoBody = new JointComparatives();
-//            LeftHandtoBody.GetJointInfo(JointType.HandLeft, JointType.ElbowLeft, JointType.HipLeft, 
-//                JointType.WristLeft, JointType.ShoulderLeft, JointType.AnkleLeft, JointType.KneeLeft);
-//            if (RightHandtoBody.IsFarthestRight() && LeftHandtoBody.IsFarthestLeft()) {
-//                DrawText("Hold Arms for 3 seconds...", new Vector2(20,400), DefaultColor);
-//                Elapsed += DrawDelta;
-//            }
-//            if (DrawDelta >= 3) {
-//                GameState.Set("level1");
-//            }
+            var RightHandtoBody = new JointComparatives();
+            RightHandtoBody.GetJointInfo(JointType.HandRight, JointType.ShoulderRight, JointType.ElbowRight,
+                JointType.HipRight, JointType.WristRight, JointType.AnkleRight, JointType.KneeRight);
+            var LeftHandtoBody = new JointComparatives();
+            LeftHandtoBody.GetJointInfo(JointType.HandLeft, JointType.ElbowLeft, JointType.HipLeft, 
+                JointType.WristLeft, JointType.ShoulderLeft, JointType.AnkleLeft, JointType.KneeLeft);
+            if (RightHandtoBody.IsFarthestRight() && LeftHandtoBody.IsFarthestLeft()) {
+                DrawText("Hold Arms for 3 seconds...", new Vector2(20,400), DefaultColor);
+                Elapsed += DrawDelta;
+            }
+            if (DrawDelta >= 3) {
+                GameState.Set("level1");
+            }
             
         }
 
