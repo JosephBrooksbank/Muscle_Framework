@@ -6,7 +6,6 @@ namespace KinectDemo.Scripts {
     internal class JointComparatives : MyGame {
         private JointType MainJoint;
         private JointType[] OtherJoints;
-
         /// <summary>
         ///     Sets joints to be used for comparisons
         /// </summary>

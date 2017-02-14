@@ -46,7 +46,7 @@ namespace KinectDemo.Scripts {
 
         // GameState Handlers:
 
-
+        private float Elapsed;
         private readonly Color DefaultColor = Color.Black;
 
 
@@ -64,18 +64,36 @@ namespace KinectDemo.Scripts {
         }
 
         public void OnUpdate_TitleScreen() {
-            //Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello Title Screen ", new Vector2(20, 200), defaultColor);
-            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Welcome to [Game] ", new Vector2(20, 200),
-                DefaultColor);
+            
+            //TODO Think of name for simulation
+            DrawText("Welcome to [NAME]!", new Vector2(500, 20), DefaultColor);
+            DrawText("Place both hands perpendicular to body for 3 seconds to enter simulation", new Vector2(20, 100), DefaultColor);
+
+            // Testing Comparatives 
             if (IsTouching(JointType.HandLeft, JointType.Head))
-                Renderer.DrawString(Resources.Fonts.Load("font_20"), "Left hand is over head!", new Vector2(20, 300),
-                    DefaultColor);
-            var CompareJoints = new JointComparatives();
-            CompareJoints.GetJointInfo(JointType.HandLeft, JointType.AnkleLeft, JointType.AnkleRight,
+                DrawText("Left hand is touching head!", new Vector2(20, 300), DefaultColor);
+            var LeftHandtoOthers = new JointComparatives();
+            LeftHandtoOthers.GetJointInfo(JointType.HandLeft, JointType.AnkleLeft, JointType.AnkleRight,
                 JointType.WristRight, JointType.Head);
-            if (CompareJoints.IsHighest())
-                Renderer.DrawString(Resources.Fonts.Load("font_20"), "Left Hand is highest!!", new Vector2(40, 300),
-                    DefaultColor);
+            if (LeftHandtoOthers.IsHighest())
+                DrawText("Left Hand is highest!", new Vector2(40, 300), DefaultColor);
+            if (LeftHandtoOthers.IsLowest())
+                DrawText("Left Hand is lowest", new Vector2(40, 300), DefaultColor);
+
+//            var RightHandtoBody = new JointComparatives();
+//            RightHandtoBody.GetJointInfo(JointType.HandRight, JointType.ShoulderRight, JointType.ElbowRight,
+//                JointType.HipRight, JointType.WristRight, JointType.AnkleRight, JointType.KneeRight);
+//            var LeftHandtoBody = new JointComparatives();
+//            LeftHandtoBody.GetJointInfo(JointType.HandLeft, JointType.ElbowLeft, JointType.HipLeft, 
+//                JointType.WristLeft, JointType.ShoulderLeft, JointType.AnkleLeft, JointType.KneeLeft);
+//            if (RightHandtoBody.IsFarthestRight() && LeftHandtoBody.IsFarthestLeft()) {
+//                DrawText("Hold Arms for 3 seconds...", new Vector2(20,400), DefaultColor);
+//                Elapsed += DrawDelta;
+//            }
+//            if (DrawDelta >= 3) {
+//                GameState.Set("level1");
+//            }
+            
         }
 
         public void OnEnter_TitleScreen() {
@@ -112,34 +130,11 @@ namespace KinectDemo.Scripts {
                     JointComparatives.GetJointPosition(joint2, ScreenSpace.World)) < 60f;
         }
 
-        /* public bool IsAbove(JointType joint1, JointType joint2) {
-             return GetJointPosition(joint1, ScreenSpace.World).Y > GetJointPosition(joint2, ScreenSpace.World).Y;
-         }*/
+        public void DrawText(string text, Vector2 pos, Color color, string font = "font_20") { // TODO figure out why I can't set a default value for color 
+            Renderer.DrawString(Resources.Fonts.Load(font), text, pos, color);
+        }
 
-        /// <summary>
-        ///     Returns the screen position of the target joint.
-        /// </summary>
-        /// <param name="joint">The joint to return position data for.</param>
-        /// <param name="type"> The area to calculate for, either world or screen </param>
-        /// <param name="skeleton">If not set then the first available skeleton will be selected.</param>
-        /// <returns>The joint position.</returns>
-        /*  public static Vector3 GetJointPosition(JointType joint, ScreenSpace type, CustomSkeleton skeleton = null) {
-              if (Instance == null)
-                  return Vector3.Zero;
-  
-              // If the skeleton provided is null then grab the first available skeleton and use it:
-              if (skeleton == null && Instance.Skeletons != null && Instance.Skeletons.Count > 0)
-                  skeleton =
-                      Instance.Skeletons.FirstOrDefault(
-                          o => o.Joints.Count > 0 && o.State == SkeletonTrackingState.Tracked);
-              else
-                  return Vector3.Zero;
-  
-              if (type == ScreenSpace.Screen)
-                  return skeleton?.ScaleTo(joint, Screen.Width, Screen.Height) ?? Vector3.Zero;
-              return skeleton?.ScaleTo(joint, World.Width, World.Height) ?? Vector3.Zero;
-          }*/
-        public float Interpolate(float a, float b, float speed) {
+    public float Interpolate(float a, float b, float speed) {
             return MathHelper.Lerp(a, b, DrawDelta * speed);
         }
 

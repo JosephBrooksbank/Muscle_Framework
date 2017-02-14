@@ -165,7 +165,6 @@ D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microso
 D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
 D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
 D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Video.xml
-D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Expression.Drawing.xml
 D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
 D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\obj\x86\Debug\KinectProject.csprojResolveAssemblyReference.cache
 D:\kinect_files\Muscle_Framework\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
