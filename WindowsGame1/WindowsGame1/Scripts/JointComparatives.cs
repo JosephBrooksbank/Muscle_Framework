@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.Kinect;
 using Microsoft.Xna.Framework;
 
@@ -63,6 +64,24 @@ namespace KinectDemo.Scripts {
                     Farthest = false;
             return Farthest;
         }
+
+
+
+        /// <summary>
+        /// Checks to see if all the joints are level 
+        /// </summary>
+        /// <returns> Whether or not the joints are level with the main joint </returns>
+        public bool IsLevel() {
+            var Level = true;
+            foreach (var T in OtherJoints)
+                if (
+                    !(Math.Abs(GetJointPosition(MainJoint, ScreenSpace.Screen).Y -
+                               GetJointPosition(T, ScreenSpace.Screen).Y) < 10))
+                    Level = false;
+            return Level;
+        }
+
+
 
         /// <summary>
         ///     Gets the position in a vector3 of a current joint
