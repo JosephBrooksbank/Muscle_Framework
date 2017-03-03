@@ -84,14 +84,14 @@ namespace KinectDemo.Scripts {
             RightHandtoBody.GetJointInfo(JointType.HandRight, JointType.ShoulderRight, JointType.ElbowRight, JointType.WristRight);
             JointComparatives LeftHandtoBody = new JointComparatives();
             LeftHandtoBody.GetJointInfo(JointType.HandLeft, JointType.ElbowLeft, JointType.WristLeft, JointType.ShoulderLeft);
-            if (RightHandtoBody.IsFarthestRight() && LeftHandtoBody.IsFarthestLeft() && LeftHandtoBody.IsLevel() && RightHandtoBody.IsLevel()){ 
-                DrawText("Hold Arms for 3 seconds...", new Vector2(20,400), DefaultColor);
+            if (RightHandtoBody.IsFarthestRight() && LeftHandtoBody.IsFarthestLeft() && LeftHandtoBody.IsLevel() &&
+                RightHandtoBody.IsLevel()) {
+                DrawText("Hold Arms for 3 seconds...", new Vector2(20, 400), DefaultColor);
                 Elapsed += DrawDelta;
             }
-            if (DrawDelta >= 3) {
-                GameState.Set("level1");
-            }
             
+             
+
         }
 
         public void OnEnter_TitleScreen() {

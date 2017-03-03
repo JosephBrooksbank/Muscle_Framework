@@ -106,5 +106,7 @@ namespace KinectDemo.Scripts {
                 return skeleton?.ScaleTo(joint, Screen.Width, Screen.Height) ?? Vector3.Zero;
             return skeleton?.ScaleTo(joint, World.Width, World.Height) ?? Vector3.Zero;
         }
+
+
     }
 }
