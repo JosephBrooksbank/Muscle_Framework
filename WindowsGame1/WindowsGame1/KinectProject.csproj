@@ -78,6 +78,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Scripts\ConnectionColor.cs" />
     <Compile Include="Scripts\Muscles.cs" />
     <Compile Include="Scripts\JointComparatives.cs" />
     <Compile Include="Scripts\GameState.cs" />
