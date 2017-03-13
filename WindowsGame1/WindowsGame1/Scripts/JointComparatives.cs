@@ -10,6 +10,7 @@ namespace KinectDemo.Scripts {
         private JointType[] OtherJoints;
         private Vector3 OldPosition = Vector3.Zero;
         private char[] axis;
+
         /// <summary>
         ///     Sets joints to be used for comparisons
         /// </summary>
@@ -84,7 +85,6 @@ namespace KinectDemo.Scripts {
             return Level;
         }
 
-
         public bool IsMoving() {
             if ((Math.Abs(GetJointPosition(MainJoint, ScreenSpace.World).X - OldPosition.X) > 10) ||
                 (Math.Abs(GetJointPosition(MainJoint, ScreenSpace.World).Y - OldPosition.Y) > 10)
@@ -97,7 +97,6 @@ namespace KinectDemo.Scripts {
             return false;
 
         }
-
 
 
         /// <summary>

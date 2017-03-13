@@ -79,7 +79,6 @@ namespace KinectDemo.Scripts {
                 DrawText("Left Hand is highest!", new Vector2(40, 300), DefaultColor);
             if (LeftHandtoOthers.IsLowest())
                 DrawText("Left Hand is lowest", new Vector2(40, 300), DefaultColor);
-
             if (LeftHandtoOthers.IsMoving()) {
                 DrawText("Left Hand is moving!", new Vector2(40, 350), DefaultColor);
             }
