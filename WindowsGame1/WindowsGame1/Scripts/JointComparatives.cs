@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using Microsoft.Kinect;
 using Microsoft.Xna.Framework;
 
@@ -7,6 +8,8 @@ namespace KinectDemo.Scripts {
     internal class JointComparatives : MyGame {
         private JointType MainJoint;
         private JointType[] OtherJoints;
+        private Vector3 OldPosition = Vector3.Zero;
+        private char[] axis;
         /// <summary>
         ///     Sets joints to be used for comparisons
         /// </summary>
@@ -79,6 +82,20 @@ namespace KinectDemo.Scripts {
                                GetJointPosition(T, ScreenSpace.Screen).Y) < 10))
                     Level = false;
             return Level;
+        }
+
+
+        public bool IsMoving() {
+            if ((Math.Abs(GetJointPosition(MainJoint, ScreenSpace.World).X - OldPosition.X) > 10) ||
+                (Math.Abs(GetJointPosition(MainJoint, ScreenSpace.World).Y - OldPosition.Y) > 10)
+                || (Math.Abs(GetJointPosition(MainJoint, ScreenSpace.World).Z - OldPosition.Z) > 10)) {
+
+                OldPosition = GetJointPosition(MainJoint, ScreenSpace.World);
+                return true;
+            }
+
+            return false;
+
         }
 
 

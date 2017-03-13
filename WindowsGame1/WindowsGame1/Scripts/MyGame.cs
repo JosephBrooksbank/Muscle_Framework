@@ -80,18 +80,10 @@ namespace KinectDemo.Scripts {
             if (LeftHandtoOthers.IsLowest())
                 DrawText("Left Hand is lowest", new Vector2(40, 300), DefaultColor);
 
-            JointComparatives RightHandtoBody = new JointComparatives();                            // TODO figure out why this block is crashing
-            RightHandtoBody.GetJointInfo(JointType.HandRight, JointType.ShoulderRight, JointType.ElbowRight, JointType.WristRight);
-            JointComparatives LeftHandtoBody = new JointComparatives();
-            LeftHandtoBody.GetJointInfo(JointType.HandLeft, JointType.ElbowLeft, JointType.WristLeft, JointType.ShoulderLeft);
-            if (RightHandtoBody.IsFarthestRight() && LeftHandtoBody.IsFarthestLeft() && LeftHandtoBody.IsLevel() && RightHandtoBody.IsLevel()){ 
-                DrawText("Hold Arms for 3 seconds...", new Vector2(20,400), DefaultColor);
-                Elapsed += DrawDelta;
+            if (LeftHandtoOthers.IsMoving()) {
+                DrawText("Left Hand is moving!", new Vector2(40, 350), DefaultColor);
             }
-            if (DrawDelta >= 3) {
-                GameState.Set("level1");
-            }
-            
+          
         }
 
         public void OnEnter_TitleScreen() {
@@ -148,23 +140,23 @@ namespace KinectDemo.Scripts {
             if (skeleton == null)
                 return;
 
-            DrawJointConnection(skeleton, JointType.Head, JointType.ShoulderCenter);
-            DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderRight);
-            DrawJointConnection(skeleton, JointType.ShoulderRight, JointType.ElbowRight);
-            DrawJointConnection(skeleton, JointType.ElbowRight, JointType.HandRight);
-            DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderLeft);
-            DrawJointConnection(skeleton, JointType.ShoulderLeft, JointType.ElbowLeft);
-            DrawJointConnection(skeleton, JointType.ElbowLeft, JointType.HandLeft);
-            DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.HipCenter);
-            DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipRight);
-            DrawJointConnection(skeleton, JointType.HipRight, JointType.KneeRight);
-            DrawJointConnection(skeleton, JointType.KneeRight, JointType.FootRight);
-            DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipLeft);
-            DrawJointConnection(skeleton, JointType.HipLeft, JointType.KneeLeft);
-            DrawJointConnection(skeleton, JointType.KneeLeft, JointType.FootLeft);
+            DrawJointConnection(skeleton, JointType.Head, JointType.ShoulderCenter, Color.Blue);
+            DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderRight, Color.Blue);
+            DrawJointConnection(skeleton, JointType.ShoulderRight, JointType.ElbowRight, Color.Blue);
+            DrawJointConnection(skeleton, JointType.ElbowRight, JointType.HandRight, Color.Blue);
+            DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderLeft, Color.Blue);
+            DrawJointConnection(skeleton, JointType.ShoulderLeft, JointType.ElbowLeft, Color.Blue);
+            DrawJointConnection(skeleton, JointType.ElbowLeft, JointType.HandLeft, Color.Blue);
+            DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.HipCenter, Color.Blue);
+            DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipRight, Color.Blue);
+            DrawJointConnection(skeleton, JointType.HipRight, JointType.KneeRight, Color.Blue);
+            DrawJointConnection(skeleton, JointType.KneeRight, JointType.FootRight, Color.Blue);
+            DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipLeft, Color.Blue);
+            DrawJointConnection(skeleton, JointType.HipLeft, JointType.KneeLeft, Color.Blue);
+            DrawJointConnection(skeleton, JointType.KneeLeft, JointType.FootLeft, Color.Blue);
         }
 
-        public void DrawJointConnection(CustomSkeleton skeleton, JointType joint1, JointType joint2) {
+        public void DrawJointConnection(CustomSkeleton skeleton, JointType joint1, JointType joint2, Color color) {
             DrawLine(Renderer, 4, Color.Blue, JointToVector(skeleton, joint1), JointToVector(skeleton, joint2));
         }
 
