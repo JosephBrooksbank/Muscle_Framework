@@ -11,15 +11,15 @@ namespace MyKinectGame
     {
         public static class Images
         {
-            private static Dictionary<string, Texture2D> cache = new Dictionary<string, Texture2D>();
+            private static Dictionary<string, Texture2D> Cache = new Dictionary<string, Texture2D>();
 
             public static Texture2D Pixel
             {
                 get
                 {
-                    if (_pixel == null && MyGame.instance != null)
+                    if (_pixel == null && MyGame.Instance != null)
                     {
-                        _pixel = new Texture2D(MyGame.instance.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
+                        _pixel = new Texture2D(MyGame.Instance.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
                         _pixel.SetData(new[] { Color.White });
                     }
 
@@ -33,24 +33,24 @@ namespace MyKinectGame
 
             public static Texture2D Load(string name)
             {
-                if(!cache.ContainsKey(name))
+                if(!Cache.ContainsKey(name))
                 {
-                    Texture2D resource = null;
-                    if (MyGame.instance != null)
+                    Texture2D Resource = null;
+                    if (MyGame.Instance != null)
                     {
                         try
                         {
-                            resource = MyGame.instance.Content.Load<Texture2D>(name);
+                            Resource = MyGame.Instance.Content.Load<Texture2D>(name);
                         }
                         catch
                         {
-                            resource = Pixel;
+                            Resource = Pixel;
                         }
                     }
-                    cache.Add(name, resource);
+                    Cache.Add(name, Resource);
                 }
 
-                return cache[name];
+                return Cache[name];
             }
 
             public static void Unload()
@@ -59,50 +59,50 @@ namespace MyKinectGame
                 if (_pixel != null)
                     _pixel.Dispose();
 
-                foreach(Texture2D resource in cache.Values.ToList())
+                foreach(Texture2D Resource in Cache.Values.ToList())
                 {
-                    if (resource == null || resource.IsDisposed)
+                    if (Resource == null || Resource.IsDisposed)
                         continue;
 
-                    resource.Dispose();
+                    Resource.Dispose();
                 }
 
-                cache.Clear();
+                Cache.Clear();
             }
         }
 
         public static class Fonts
         {
-            private static Dictionary<string, SpriteFont> cache = new Dictionary<string, SpriteFont>();
+            private static Dictionary<string, SpriteFont> Cache = new Dictionary<string, SpriteFont>();
             
             /**********************************************************************************************/
             // Utilities:
 
             public static SpriteFont Load(string name)
             {
-                if (!cache.ContainsKey(name))
+                if (!Cache.ContainsKey(name))
                 {
-                    SpriteFont resource = null;
-                    if (MyGame.instance != null)
+                    SpriteFont Resource = null;
+                    if (MyGame.Instance != null)
                     {
                         try
                         {
-                            resource = MyGame.instance.Content.Load<SpriteFont>(name);
+                            Resource = MyGame.Instance.Content.Load<SpriteFont>(name);
                         }
                         catch
                         {
-                            resource = null;
+                            Resource = null;
                         }
                     }
-                    cache.Add(name, resource);
+                    Cache.Add(name, Resource);
                 }
 
-                return cache[name];
+                return Cache[name];
             }
 
             public static void Unload()
             {
-                cache.Clear();
+                Cache.Clear();
             }
         }
 
@@ -112,7 +112,7 @@ namespace MyKinectGame
             Fonts.Unload();
 
             // Unload all other assets that were loaded:
-            MyGame.instance.Content.Unload();
+            MyGame.Instance.Content.Unload();
         }
     }
 }

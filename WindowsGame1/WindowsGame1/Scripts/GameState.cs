@@ -28,7 +28,7 @@ namespace MyKinectGame
         /// <param name="updateHandler">This will be called every frame while the state is active.</param>
         public static void Add(string name, Action updateHandler = null, Action initHandler = null, Action enterHandler = null, Action exitHandler = null)
         {
-            GameState state = new GameState()
+            GameState State = new GameState()
             {
                 Name = name,
                 OnInit = initHandler,
@@ -39,11 +39,11 @@ namespace MyKinectGame
 
             if (GameStates.ContainsKey(name))
             {
-                GameStates[name] = state;
+                GameStates[name] = State;
             }
             else
             {
-                GameStates.Add(name, state);
+                GameStates.Add(name, State);
             }
         }
 
@@ -87,7 +87,7 @@ namespace MyKinectGame
         {
             if (ActiveState == null)
                 return;
-            if (ActiveState.completed)
+            if (ActiveState.Completed)
                 return;
 
             if (OnStateConditionCompleted != null)
@@ -134,14 +134,14 @@ namespace MyKinectGame
 
         public string Name = string.Empty;
 
-        private bool initialized = false;
-        private bool completed = false;
+        private bool Initialized = false;
+        private bool Completed = false;
 
         public void Activate()
         {
-            if (!initialized)
+            if (!Initialized)
             {
-                initialized = true;
+                Initialized = true;
 
                 if (OnInit != null)
                 {

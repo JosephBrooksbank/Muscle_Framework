@@ -10,9 +10,9 @@ namespace MyKinectGame
         /// </summary>
         static void Main(string[] args)
         {
-            using (MyGame game = new MyGame())
+            using (MyGame Game = new MyGame())
             {
-                game.Run();                
+                Game.Run();                
             }
         }
     }
