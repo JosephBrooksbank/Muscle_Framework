@@ -1,53 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using Microsoft.Kinect;
 using Microsoft.Xna.Framework;
 using MyKinectGame;
 
-namespace KinectDemo.Scripts
-{
-    public class JointMovement
-    {
-        private Vector3 PrevPos;
-        private Vector3 CurrPos;
-        private int CurrentlyMoving = 0;
-        private int NotMoving = 0;
-        public bool moving = false;
-        private double error = 3;
+namespace KinectDemo.Scripts {
+    public class JointMovement {
+        private readonly double Error = 3;
+        private readonly int UpdateTime = 60;
+        private int CurrentlyMoving;
         private DateTime CurrentTime;
+        public JointType Joint1;
+        public bool Moving;
+        private int NotMoving;
         private TimeSpan PassedTime;
-        private int updateTime = 60;
-        public JointType joint1;
-        private MyGame instance;
+        private Vector3 PrevPos;
+
 
         public JointMovement(JointType joint1, MyGame instance) {
-            this.joint1 = joint1;
-            this.instance = instance;
-
+            this.Joint1 = joint1;
         }
 
-        public bool IsMoving(Vector3 CurrPos) {
-            
-            if (!(Math.Abs(CurrPos.X - PrevPos.X) < error) || !(Math.Abs(CurrPos.Y - PrevPos.Y) < error))
+        public bool IsMoving(Vector3 currPos) {
+            if (!(Math.Abs(currPos.X - PrevPos.X) < Error) || !(Math.Abs(currPos.Y - PrevPos.Y) < Error))
                 CurrentlyMoving += 1;
             else
                 NotMoving += 1;
 
-            if (PassedTime.Milliseconds > updateTime)
-            {
-                moving = CurrentlyMoving > NotMoving;
-                PrevPos = CurrPos;
+            if (PassedTime.Milliseconds > UpdateTime) {
+                Moving = CurrentlyMoving > NotMoving;
+                PrevPos = currPos;
                 CurrentTime = DateTime.Now;
                 CurrentlyMoving = 0;
                 NotMoving = 0;
             }
 
             PassedTime = DateTime.Now - CurrentTime;
-            return moving;
+            return Moving;
         }
-
     }
 }

@@ -14,7 +14,7 @@ namespace KinectDemo.Scripts
         Color JointColor;
         public void DrawJointConnection(MyGame.CustomSkeleton skeleton, JointType joint1, JointType joint2, SpriteBatch renderer, bool isMoving) {
             JointColor = isMoving ? Color.Red : Color.Blue;
-            DrawLine(renderer, 4, JointColor, jointToVector(skeleton, joint1), jointToVector(skeleton, joint2));
+            DrawLine(renderer, 4, JointColor, JointToVector(skeleton, joint1), JointToVector(skeleton, joint2));
         }
 
 
@@ -23,13 +23,13 @@ namespace KinectDemo.Scripts
                 Vector2.Zero, new Vector2(Vector2.Distance(p1, p2), width), SpriteEffects.None, 0);
         }
 
-        protected Vector2 jointToVector(MyGame.CustomSkeleton skeleton, JointType type) {
-            return jointToVector(skeleton, type, MyGame.World.Width, MyGame.World.Height);
+        protected Vector2 JointToVector(MyGame.CustomSkeleton skeleton, JointType type) {
+            return JointToVector(skeleton, type, MyGame.World.Width, MyGame.World.Height);
         }
 
-        protected Vector2 jointToVector(MyGame.CustomSkeleton skeleton, JointType type, int Width, int Height) {
-            var position = skeleton.ScaleTo(type, Width, Height);
-            return new Vector2(position.X, position.Y);
+        protected Vector2 JointToVector(MyGame.CustomSkeleton skeleton, JointType type, int width, int height) {
+            var Position = skeleton.ScaleTo(type, width, height);
+            return new Vector2(Position.X, Position.Y);
         }
     }
 }

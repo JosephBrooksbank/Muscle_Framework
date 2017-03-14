@@ -20,7 +20,7 @@ namespace MyKinectGame
         }
 
         // This is a reference to your game and all of its data:
-        public static MyGame instance;
+        public static MyGame Instance;
         public static RenderJoint Render = new RenderJoint();
         // The amount of time that has passed since the last Update() call:
         public static float UpdateDelta;
@@ -46,20 +46,20 @@ namespace MyKinectGame
         public static bool SkeletonActive;
         private int i = 0;
 
-        JointMovement HeadMovement = new JointMovement(JointType.Head, instance);
-        JointMovement ShoulderRightMovement = new JointMovement(JointType.ShoulderRight, instance);
-        JointMovement ElbowRightMovement = new JointMovement(JointType.ElbowRight, instance);
-        JointMovement HandRightMovement = new JointMovement(JointType.HandRight, instance);
-        JointMovement ShoudlerLeftMovement = new JointMovement(JointType.ShoulderLeft, instance );
-        JointMovement ElbowLeftMovement = new JointMovement(JointType.ElbowLeft, instance);
-        JointMovement HandLeftMovement = new JointMovement(JointType.HandLeft, instance);
-        JointMovement HipCenterMovement = new JointMovement(JointType.HipCenter, instance);
-        JointMovement HipRightMovement = new JointMovement(JointType.HipRight, instance);
-        JointMovement KneeRightMovement = new JointMovement(JointType.KneeRight, instance);
-        JointMovement FootRightMovement = new JointMovement(JointType.FootRight, instance);
-        JointMovement HipLeftMovement = new JointMovement(JointType.HipLeft, instance);
-        JointMovement KneeLeftMovement = new JointMovement(JointType.KneeLeft, instance);
-        JointMovement FootLeftMovement = new JointMovement(JointType.FootRight, instance);
+        JointMovement HeadMovement = new JointMovement(JointType.Head, Instance);
+        JointMovement ShoulderRightMovement = new JointMovement(JointType.ShoulderRight, Instance);
+        JointMovement ElbowRightMovement = new JointMovement(JointType.ElbowRight, Instance);
+        JointMovement HandRightMovement = new JointMovement(JointType.HandRight, Instance);
+        JointMovement ShoudlerLeftMovement = new JointMovement(JointType.ShoulderLeft, Instance );
+        JointMovement ElbowLeftMovement = new JointMovement(JointType.ElbowLeft, Instance);
+        JointMovement HandLeftMovement = new JointMovement(JointType.HandLeft, Instance);
+        JointMovement HipCenterMovement = new JointMovement(JointType.HipCenter, Instance);
+        JointMovement HipRightMovement = new JointMovement(JointType.HipRight, Instance);
+        JointMovement KneeRightMovement = new JointMovement(JointType.KneeRight, Instance);
+        JointMovement FootRightMovement = new JointMovement(JointType.FootRight, Instance);
+        JointMovement HipLeftMovement = new JointMovement(JointType.HipLeft, Instance);
+        JointMovement KneeLeftMovement = new JointMovement(JointType.KneeLeft, Instance);
+        JointMovement FootLeftMovement = new JointMovement(JointType.FootRight, Instance);
         // GameState Handlers:
 
 
@@ -133,13 +133,13 @@ namespace MyKinectGame
         /// <param name="skeleton">If not set then the first available skeleton will be selected.</param>
         /// <returns>The joint position.</returns>
         public static Vector3 GetJointPosition(JointType joint, ScreenSpace type, CustomSkeleton skeleton = null) {
-            if (instance == null)
+            if (Instance == null)
                 return Vector3.Zero;
 
             // If the skeleton provided is null then grab the first available skeleton and use it:
-            if (skeleton == null && instance.Skeletons != null && instance.Skeletons.Count > 0)
+            if (skeleton == null && Instance.Skeletons != null && Instance.Skeletons.Count > 0)
                 skeleton =
-                    instance.Skeletons.FirstOrDefault(o => o.Joints.Count > 0 && o.State == SkeletonTrackingState.Tracked);
+                    Instance.Skeletons.FirstOrDefault(o => o.Joints.Count > 0 && o.State == SkeletonTrackingState.Tracked);
             else
                 return Vector3.Zero;
 
@@ -166,20 +166,20 @@ namespace MyKinectGame
             if (skeleton == null)
                 return;
 
-            Render.DrawJointConnection(skeleton, JointType.Head, JointType.ShoulderCenter, Renderer, HeadMovement.IsMoving(GetJointPosition(HeadMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderRight, Renderer, ShoulderRightMovement.IsMoving(GetJointPosition(ShoulderRightMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ShoulderRight, JointType.ElbowRight, Renderer, ElbowRightMovement.IsMoving(GetJointPosition(ElbowRightMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ElbowRight, JointType.HandRight, Renderer, HandRightMovement.IsMoving(GetJointPosition(HandRightMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderLeft, Renderer, ShoudlerLeftMovement.IsMoving(GetJointPosition(ShoudlerLeftMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ShoulderLeft, JointType.ElbowLeft, Renderer, ElbowLeftMovement.IsMoving(GetJointPosition(ElbowLeftMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ElbowLeft, JointType.HandLeft, Renderer, HandLeftMovement.IsMoving(GetJointPosition(HandLeftMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.HipCenter, Renderer, HipCenterMovement.IsMoving(GetJointPosition(HipCenterMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipRight, Renderer, HipRightMovement.IsMoving(GetJointPosition(HipRightMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.HipRight, JointType.KneeRight, Renderer, KneeRightMovement.IsMoving(GetJointPosition(KneeRightMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.KneeRight, JointType.FootRight, Renderer, FootRightMovement.IsMoving(GetJointPosition(FootRightMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipLeft, Renderer, HipLeftMovement.IsMoving(GetJointPosition(HipLeftMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.HipLeft, JointType.KneeLeft, Renderer, KneeLeftMovement.IsMoving(GetJointPosition(KneeLeftMovement.joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.KneeLeft, JointType.FootLeft, Renderer, FootLeftMovement.IsMoving(GetJointPosition(FootLeftMovement.joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.Head, JointType.ShoulderCenter, Renderer, HeadMovement.IsMoving(GetJointPosition(HeadMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderRight, Renderer, ShoulderRightMovement.IsMoving(GetJointPosition(ShoulderRightMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.ShoulderRight, JointType.ElbowRight, Renderer, ElbowRightMovement.IsMoving(GetJointPosition(ElbowRightMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.ElbowRight, JointType.HandRight, Renderer, HandRightMovement.IsMoving(GetJointPosition(HandRightMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderLeft, Renderer, ShoudlerLeftMovement.IsMoving(GetJointPosition(ShoudlerLeftMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.ShoulderLeft, JointType.ElbowLeft, Renderer, ElbowLeftMovement.IsMoving(GetJointPosition(ElbowLeftMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.ElbowLeft, JointType.HandLeft, Renderer, HandLeftMovement.IsMoving(GetJointPosition(HandLeftMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.HipCenter, Renderer, HipCenterMovement.IsMoving(GetJointPosition(HipCenterMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipRight, Renderer, HipRightMovement.IsMoving(GetJointPosition(HipRightMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.HipRight, JointType.KneeRight, Renderer, KneeRightMovement.IsMoving(GetJointPosition(KneeRightMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.KneeRight, JointType.FootRight, Renderer, FootRightMovement.IsMoving(GetJointPosition(FootRightMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipLeft, Renderer, HipLeftMovement.IsMoving(GetJointPosition(HipLeftMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.HipLeft, JointType.KneeLeft, Renderer, KneeLeftMovement.IsMoving(GetJointPosition(KneeLeftMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.KneeLeft, JointType.FootLeft, Renderer, FootLeftMovement.IsMoving(GetJointPosition(FootLeftMovement.Joint1, ScreenSpace.World)));
         }
 
 //        public void DrawJointConnection(CustomSkeleton skeleton, JointType joint1, JointType joint2) {
@@ -194,19 +194,19 @@ namespace MyKinectGame
         public static class Screen {
             public static int Width {
                 get {
-                    if (instance == null)
+                    if (Instance == null)
                         return 0;
 
-                    return instance.GraphicsManager.PreferredBackBufferWidth;
+                    return Instance.GraphicsManager.PreferredBackBufferWidth;
                 }
             }
 
             public static int Height {
                 get {
-                    if (instance == null)
+                    if (Instance == null)
                         return 0;
 
-                    return instance.GraphicsManager.PreferredBackBufferHeight;
+                    return Instance.GraphicsManager.PreferredBackBufferHeight;
                 }
             }
         }
@@ -227,8 +227,8 @@ namespace MyKinectGame
             return jointToVector(skeleton, type, World.Width, World.Height);
         }
 
-        protected Vector2 jointToVector(CustomSkeleton skeleton, JointType type, int Width, int Height) {
-            var position = skeleton.ScaleTo(type, Width, Height);
+        protected Vector2 jointToVector(CustomSkeleton skeleton, JointType type, int width, int height) {
+            var position = skeleton.ScaleTo(type, width, height);
             return new Vector2(position.X, position.Y);
         }
 
@@ -256,7 +256,7 @@ namespace MyKinectGame
 
         protected override void Initialize() {
             // Set the instance so that it is available to other classes:
-            instance = this;
+            Instance = this;
 
             // The Kinect has a built in system that handles 6 skeletons at once:
             Skeletons = new List<CustomSkeleton>();
