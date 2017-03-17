@@ -46,6 +46,7 @@ namespace MyKinectGame
         public static bool SkeletonActive;
         private int i = 0;
 
+
         JointMovement HeadMovement = new JointMovement(JointType.Head, Instance);
         JointMovement ShoulderRightMovement = new JointMovement(JointType.ShoulderRight, Instance);
         JointMovement ElbowRightMovement = new JointMovement(JointType.ElbowRight, Instance);
