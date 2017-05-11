@@ -46,7 +46,10 @@ namespace MyKinectGame
         public static bool SkeletonActive;
         private int i = 0;
 
-
+        MuscleGroups MuscleGroups = new MuscleGroups();
+        List<bool> SpineMuscleUse = new List<bool>();
+        List<bool> ShoulderMuscleUse = new List<bool>();
+        bool RaiseArm = new bool();
         JointMovement HeadMovement = new JointMovement(JointType.Head, Instance);
         JointMovement ShoulderRightMovement = new JointMovement(JointType.ShoulderRight, Instance);
         JointMovement ElbowRightMovement = new JointMovement(JointType.ElbowRight, Instance);
@@ -166,21 +169,38 @@ namespace MyKinectGame
         public void DrawSkeleton(CustomSkeleton skeleton) {
             if (skeleton == null)
                 return;
+            // Checking for Movement and sending it to MuscleGroups to tell which muscles are being used 
+            MuscleGroups.CurrentMovement("");
+            if (ElbowRightMovement.IsMoving(GetJointPosition(ElbowRightMovement.Joint1, ScreenSpace.World)))
+                MuscleGroups.CurrentMovement("rightarmraise");
 
+            if (ElbowLeftMovement.IsMoving(GetJointPosition(ElbowLeftMovement.Joint1, ScreenSpace.World)))
+                MuscleGroups.CurrentMovement("leftarmraise");
+            
+           
             Render.DrawJointConnection(skeleton, JointType.Head, JointType.ShoulderCenter, Renderer, HeadMovement.IsMoving(GetJointPosition(HeadMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderRight, Renderer, ShoulderRightMovement.IsMoving(GetJointPosition(ShoulderRightMovement.Joint1, ScreenSpace.World)));
+
+            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderRight, Renderer, MuscleGroups.RightShoudlerMovement );
+
             Render.DrawJointConnection(skeleton, JointType.ShoulderRight, JointType.ElbowRight, Renderer, ElbowRightMovement.IsMoving(GetJointPosition(ElbowRightMovement.Joint1, ScreenSpace.World)));
             Render.DrawJointConnection(skeleton, JointType.ElbowRight, JointType.HandRight, Renderer, HandRightMovement.IsMoving(GetJointPosition(HandRightMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderLeft, Renderer, ShoudlerLeftMovement.IsMoving(GetJointPosition(ShoudlerLeftMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderLeft, Renderer, MuscleGroups.LeftShoulderMovement);
             Render.DrawJointConnection(skeleton, JointType.ShoulderLeft, JointType.ElbowLeft, Renderer, ElbowLeftMovement.IsMoving(GetJointPosition(ElbowLeftMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ElbowLeft, JointType.HandLeft, Renderer, HandLeftMovement.IsMoving(GetJointPosition(HandLeftMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.HipCenter, Renderer, HipCenterMovement.IsMoving(GetJointPosition(HipCenterMovement.Joint1, ScreenSpace.World)));
+            Render.DrawJointConnection(skeleton, JointType.ElbowLeft, JointType.HandLeft, Renderer, MuscleGroups.LeftArmMovement);
+
+
+            Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.HipCenter, Renderer, MuscleGroups.SpineMovement);
+
+
             Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipRight, Renderer, HipRightMovement.IsMoving(GetJointPosition(HipRightMovement.Joint1, ScreenSpace.World)));
             Render.DrawJointConnection(skeleton, JointType.HipRight, JointType.KneeRight, Renderer, KneeRightMovement.IsMoving(GetJointPosition(KneeRightMovement.Joint1, ScreenSpace.World)));
             Render.DrawJointConnection(skeleton, JointType.KneeRight, JointType.FootRight, Renderer, FootRightMovement.IsMoving(GetJointPosition(FootRightMovement.Joint1, ScreenSpace.World)));
             Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipLeft, Renderer, HipLeftMovement.IsMoving(GetJointPosition(HipLeftMovement.Joint1, ScreenSpace.World)));
             Render.DrawJointConnection(skeleton, JointType.HipLeft, JointType.KneeLeft, Renderer, KneeLeftMovement.IsMoving(GetJointPosition(KneeLeftMovement.Joint1, ScreenSpace.World)));
             Render.DrawJointConnection(skeleton, JointType.KneeLeft, JointType.FootLeft, Renderer, FootLeftMovement.IsMoving(GetJointPosition(FootLeftMovement.Joint1, ScreenSpace.World)));
+           
+            
+
         }
 
 //        public void DrawJointConnection(CustomSkeleton skeleton, JointType joint1, JointType joint2) {
@@ -288,6 +308,17 @@ namespace MyKinectGame
             }
             // Set the debug message to update whenever the game state changes:
             GameState.OnStateActivated += name => { Debug_State = name; };
+
+
+            //Adding Muscles to Muscle Groups 
+            //Groups that use spine
+            SpineMuscleUse.Add(RaiseArm);
+
+            //Groups that use Shoulders 
+            ShoulderMuscleUse.Add(RaiseArm);
+
+
+       
 
             // Setup the custom GameStates:
             SetupGameStates();

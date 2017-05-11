@@ -78,6 +78,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Scripts\MuscleGroups.cs" />
     <Compile Include="Scripts\JointMovement.cs" />
     <Compile Include="Scripts\RenderJoint.cs" />
     <Compile Include="Scripts\GameState.cs" />
