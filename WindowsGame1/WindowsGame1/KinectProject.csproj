@@ -78,9 +78,9 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Scripts\ConnectionColor.cs" />
-    <Compile Include="Scripts\Muscles.cs" />
-    <Compile Include="Scripts\JointComparatives.cs" />
+    <Compile Include="Scripts\MuscleGroups.cs" />
+    <Compile Include="Scripts\JointMovement.cs" />
+    <Compile Include="Scripts\RenderJoint.cs" />
     <Compile Include="Scripts\GameState.cs" />
     <Compile Include="Scripts\Resources.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
