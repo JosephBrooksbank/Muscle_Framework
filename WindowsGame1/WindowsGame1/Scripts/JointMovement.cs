@@ -1,9 +1,11 @@
 ﻿using System;
 using Microsoft.Kinect;
 using Microsoft.Xna.Framework;
-using MyKinectGame;
 
 namespace KinectDemo.Scripts {
+    /// <summary>
+    /// The Class to handle i
+    /// </summary>
     public class JointMovement {
         private readonly double Error = 3;
         private readonly int UpdateTime = 60;
@@ -16,10 +18,14 @@ namespace KinectDemo.Scripts {
         private Vector3 PrevPos;
 
 
-        public JointMovement(JointType joint1, MyGame instance) {
-            this.Joint1 = joint1;
+        public JointMovement(JointType joint1) {
+            Joint1 = joint1;
         }
-
+        /// <summary>
+        /// Function to test whether a joint is moving, based on its previous position 
+        /// </summary>
+        /// <param name="currPos"> The current position of the joint </param>
+        /// <returns> Whether the joint is moving or not </returns>
         public bool IsMoving(Vector3 currPos) {
             if (!(Math.Abs(currPos.X - PrevPos.X) < Error) || !(Math.Abs(currPos.Y - PrevPos.Y) < Error))
                 CurrentlyMoving += 1;

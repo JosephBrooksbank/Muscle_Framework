@@ -16,7 +16,7 @@ namespace MyKinectGame
 
         public static GameState ActiveState;
 
-        private static Dictionary<string, GameState> GameStates = new Dictionary<string, GameState>();
+        private static readonly Dictionary<string, GameState> GameStates = new Dictionary<string, GameState>();
 
         /// <summary>
         /// Adds a new game state.
@@ -135,7 +135,7 @@ namespace MyKinectGame
         public string Name = string.Empty;
 
         private bool Initialized = false;
-        private bool Completed = false;
+        private readonly bool Completed = false;
 
         public void Activate()
         {

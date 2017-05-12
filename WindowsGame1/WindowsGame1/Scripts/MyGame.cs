@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using KinectDemo.Scripts;
 using Microsoft.Kinect;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using MyKinectGame;
 
-namespace MyKinectGame
+namespace KinectDemo.Scripts
 {
+    /// <summary>
+    /// The main class for the game 
+    /// </summary>
     public class MyGame : Game {
         /**********************************************************************************************/
         // Utility Methods:
@@ -36,38 +38,35 @@ namespace MyKinectGame
         public static float Smoothing = 15f;
 
         // These strings are displayed as debug messages in the top-left corner of the screen:
-        public static string Debug_Camera = "";
-        public static string Debug_Skeleton = "";
-        public static string Debug_State = "";
+        public static string DebugCamera = "";
+        public static string DebugSkeleton = "";
+        public static string DebugState = "";
 
         // This value determines if the Debug Messages and Skeleton outline will be displayed onscreen:
         public static bool ShowDebug = true;
 
         public static bool SkeletonActive;
-        private int i = 0;
 
-        MuscleGroups MuscleGroups = new MuscleGroups();
-        List<bool> SpineMuscleUse = new List<bool>();
-        List<bool> ShoulderMuscleUse = new List<bool>();
-        bool RaiseArm = new bool();
-        JointMovement HeadMovement = new JointMovement(JointType.Head, Instance);
-        JointMovement ShoulderRightMovement = new JointMovement(JointType.ShoulderRight, Instance);
-        JointMovement ElbowRightMovement = new JointMovement(JointType.ElbowRight, Instance);
-        JointMovement HandRightMovement = new JointMovement(JointType.HandRight, Instance);
-        JointMovement ShoudlerLeftMovement = new JointMovement(JointType.ShoulderLeft, Instance );
-        JointMovement ElbowLeftMovement = new JointMovement(JointType.ElbowLeft, Instance);
-        JointMovement HandLeftMovement = new JointMovement(JointType.HandLeft, Instance);
-        JointMovement HipCenterMovement = new JointMovement(JointType.HipCenter, Instance);
-        JointMovement HipRightMovement = new JointMovement(JointType.HipRight, Instance);
-        JointMovement KneeRightMovement = new JointMovement(JointType.KneeRight, Instance);
-        JointMovement FootRightMovement = new JointMovement(JointType.FootRight, Instance);
-        JointMovement HipLeftMovement = new JointMovement(JointType.HipLeft, Instance);
-        JointMovement KneeLeftMovement = new JointMovement(JointType.KneeLeft, Instance);
-        JointMovement FootLeftMovement = new JointMovement(JointType.FootRight, Instance);
+        private readonly MuscleGroups MuscleGroups = new MuscleGroups();
+      
+        private readonly JointMovement HeadMovement = new JointMovement(JointType.Head);
+        private JointMovement ShoulderRightMovement = new JointMovement(JointType.ShoulderRight);
+        private readonly JointMovement ElbowRightMovement = new JointMovement(JointType.ElbowRight);
+        private readonly JointMovement HandRightMovement = new JointMovement(JointType.HandRight);
+        private JointMovement ShoudlerLeftMovement = new JointMovement(JointType.ShoulderLeft );
+        private readonly JointMovement ElbowLeftMovement = new JointMovement(JointType.ElbowLeft);
+        private readonly JointMovement HandLeftMovement = new JointMovement(JointType.HandLeft);
+        private readonly JointMovement HipCenterMovement = new JointMovement(JointType.HipCenter);
+        private JointMovement HipRightMovement = new JointMovement(JointType.HipRight);
+        private readonly JointMovement KneeRightMovement = new JointMovement(JointType.KneeRight);
+        private JointMovement FootRightMovement = new JointMovement(JointType.FootRight);
+        private JointMovement HipLeftMovement = new JointMovement(JointType.HipLeft);
+        private readonly JointMovement KneeLeftMovement = new JointMovement(JointType.KneeLeft);
+        private JointMovement FootLeftMovement = new JointMovement(JointType.FootRight);
         // GameState Handlers:
 
 
-        private readonly Color defaultColor = Color.Black;
+        private readonly Color DefaultColor = Color.Black;
        
 
         /**********************************************************************************************/
@@ -83,14 +82,9 @@ namespace MyKinectGame
             GameState.Set("Muscle Map");
         }
 
-        public void OnUpdate_TitleScreen() {
-            i += 1;
-            //Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello Title Screen ", new Vector2(20, 200), defaultColor);
-            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Welcome to Muscle Map! ", new Vector2(400,50), defaultColor);
-            // Renderer.DrawString(Resources.Fonts.Load("font_20"), Convert.ToString(i), new Vector2(20, 300), defaultColor);
-//            if (Skeletons != null) {
-//                
-//            }
+        public void OnUpdate_TitleScreen() {                     
+            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Welcome to Muscle Map! ", new Vector2(400,50), DefaultColor);          
+
                
 
 
@@ -104,7 +98,7 @@ namespace MyKinectGame
         }
 
         public void OnUpdate_Level1() {
-            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello LEVEL1 ", new Vector2(20, 200), defaultColor);
+            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello LEVEL1 ", new Vector2(20, 200), DefaultColor);
         }
 
         public void OnEnter_Level1() {
@@ -112,7 +106,7 @@ namespace MyKinectGame
 
         public void OnUpdate_Level2() {
             // Do something;
-            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello LEVEL 2 ", new Vector2(20, 200), defaultColor);
+            Renderer.DrawString(Resources.Fonts.Load("font_20"), "Hello LEVEL 2 ", new Vector2(20, 200), DefaultColor);
         }
 
         public void OnUpdate_Endscreen() {
@@ -120,20 +114,15 @@ namespace MyKinectGame
         }
 
         public static Color GetRandomColor() {
-            var rand = new Random((int) DateTime.Now.Ticks);
-            return new Color((float) rand.NextDouble(), (float) rand.NextDouble(), (float) rand.NextDouble(), 1f);
+            var Rand = new Random((int) DateTime.Now.Ticks);
+            return new Color((float) Rand.NextDouble(), (float) Rand.NextDouble(), (float) Rand.NextDouble(), 1f);
         }
-
-      
-
-       /* public bool IsAbove(JointType joint1, JointType joint2) {
-            return GetJointPosition(joint1, ScreenSpace.World).Y > GetJointPosition(joint2, ScreenSpace.World).Y;
-        }*/
 
         /// <summary>
         ///     Returns the screen position of the target joint.
         /// </summary>
         /// <param name="joint">The joint to return position data for.</param>
+        /// <param name="type"> Type of screen </param>
         /// <param name="skeleton">If not set then the first available skeleton will be selected.</param>
         /// <returns>The joint position.</returns>
         public static Vector3 GetJointPosition(JointType joint, ScreenSpace type, CustomSkeleton skeleton = null) {
@@ -148,8 +137,7 @@ namespace MyKinectGame
                 return Vector3.Zero;
 
             if (type == ScreenSpace.Screen)
-                return skeleton.ScaleTo(joint, Screen.Width, Screen.Height);
-           // return skeleton.ScaleTo(joint, Screen.Width, Screen.Height);
+                return skeleton.ScaleTo(joint, Screen.Width, Screen.Height);          
             if (skeleton != null) return skeleton.ScaleTo(joint, World.Width, World.Height);
             return Vector3.Zero;
         }
@@ -162,20 +150,28 @@ namespace MyKinectGame
             if (Skeletons == null)
                 return;
 
-            foreach (var skeleton in Skeletons)
-                DrawSkeleton(skeleton);
+            foreach (var Skeleton in Skeletons)
+                DrawSkeleton(Skeleton);
         }
 
+        /// <summary>
+        /// Draws the player on the screen
+        /// </summary>
+        /// <param name="skeleton"></param>
         public void DrawSkeleton(CustomSkeleton skeleton) {
             if (skeleton == null)
                 return;
             // Checking for Movement and sending it to MuscleGroups to tell which muscles are being used 
+            // Resets all muscles
             MuscleGroups.CurrentMovement("");
+
+            // Arms raising, uses back and shoulder muscles 
             if (ElbowRightMovement.IsMoving(GetJointPosition(ElbowRightMovement.Joint1, ScreenSpace.World)))
                 MuscleGroups.CurrentMovement("rightarmraise");
             if (ElbowLeftMovement.IsMoving(GetJointPosition(ElbowLeftMovement.Joint1, ScreenSpace.World)))
                 MuscleGroups.CurrentMovement("leftarmraise");
             
+            // If legs are raised, hip and back muscles used. If knees are bent, leg muscles are used
             if (KneeLeftMovement.IsMoving(GetJointPosition(KneeLeftMovement.Joint1, ScreenSpace.World)) && 
                 !HipCenterMovement.IsMoving(GetJointPosition(HipCenterMovement.Joint1, ScreenSpace.World)))
                 MuscleGroups.CurrentMovement("leftkneeraise");
@@ -189,26 +185,23 @@ namespace MyKinectGame
                 MuscleGroups.CurrentMovement("rightkneebend");
 
 
-
+            // If hands are moved (bicep curl style), arm muscles are used 
             if (HandRightMovement.IsMoving(GetJointPosition(HandRightMovement.Joint1, ScreenSpace.World)))
                 MuscleGroups.CurrentMovement("rightforearm");
             if (HandLeftMovement.IsMoving(GetJointPosition(HandLeftMovement.Joint1, ScreenSpace.World)))
                 MuscleGroups.CurrentMovement("leftforearm");
 
-            
-            //Render.DrawJointConnection(skeleton, JointType.Head, JointType.ShoulderCenter, Renderer, HeadMovement.IsMoving(GetJointPosition(HeadMovement.Joint1, ScreenSpace.World)));
-
+            if (HeadMovement.IsMoving(GetJointPosition(HeadMovement.Joint1, ScreenSpace.World)))
+                MuscleGroups.CurrentMovement("head");
+                    
+            Render.DrawJointConnection(skeleton, JointType.Head, JointType.ShoulderCenter, Renderer, MuscleGroups.NeckMovement);
             Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderRight, Renderer, MuscleGroups.RightShoudlerMovement );
             Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderLeft, Renderer, MuscleGroups.LeftShoulderMovement);
             Render.DrawJointConnection(skeleton, JointType.ShoulderRight, JointType.ElbowRight, Renderer, MuscleGroups.RightArmMovement);
             Render.DrawJointConnection(skeleton, JointType.ElbowRight, JointType.HandRight, Renderer, MuscleGroups.RightForearmMovement);
-
             Render.DrawJointConnection(skeleton, JointType.ShoulderLeft, JointType.ElbowLeft, Renderer, MuscleGroups.LeftArmMovement);
             Render.DrawJointConnection(skeleton, JointType.ElbowLeft, JointType.HandLeft, Renderer, MuscleGroups.LeftForearmMovement);
-
-
             Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.HipCenter, Renderer, MuscleGroups.SpineMovement);
-
             Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipRight, Renderer, MuscleGroups.RightHipMovement);
             Render.DrawJointConnection(skeleton, JointType.HipRight, JointType.KneeRight, Renderer, MuscleGroups.RightThighMovement);
             Render.DrawJointConnection(skeleton, JointType.KneeRight, JointType.FootRight, Renderer, MuscleGroups.RightCalfMovement);
@@ -216,13 +209,8 @@ namespace MyKinectGame
             Render.DrawJointConnection(skeleton, JointType.HipLeft, JointType.KneeLeft, Renderer, MuscleGroups.LeftThighMovement);
             Render.DrawJointConnection(skeleton, JointType.KneeLeft, JointType.FootLeft, Renderer, MuscleGroups.LeftCalfMovement);
           
-            
-
+                  
         }
-
-//        public void DrawJointConnection(CustomSkeleton skeleton, JointType joint1, JointType joint2) {
-//            DrawLine(Renderer, 4, Color.Blue, jointToVector(skeleton, joint1), jointToVector(skeleton, joint2));
-//        }
 
         public void DrawLine(SpriteBatch spriteBatch, float width, Color color, Vector2 p1, Vector2 p2) {
             spriteBatch.Draw(Resources.Images.Pixel, p1, null, color, (float) Math.Atan2(p2.Y - p1.Y, p2.X - p1.X),
@@ -250,24 +238,20 @@ namespace MyKinectGame
         }
 
         public static class World {
-            public static int Width {
-                get { return 480; }
-            }
+            public static int Width => 480;
 
-            public static int Height {
-                get { return 360; }
-            }
+            public static int Height => 360;
         }
 
         #region Math Internal
 
-        protected Vector2 jointToVector(CustomSkeleton skeleton, JointType type) {
-            return jointToVector(skeleton, type, World.Width, World.Height);
+        protected Vector2 JointToVector(CustomSkeleton skeleton, JointType type) {
+            return JointToVector(skeleton, type, World.Width, World.Height);
         }
 
-        protected Vector2 jointToVector(CustomSkeleton skeleton, JointType type, int width, int height) {
-            var position = skeleton.ScaleTo(type, width, height);
-            return new Vector2(position.X, position.Y);
+        protected Vector2 JointToVector(CustomSkeleton skeleton, JointType type, int width, int height) {
+            var Position = skeleton.ScaleTo(type, width, height);
+            return new Vector2(Position.X, Position.Y);
         }
 
         #endregion
@@ -284,10 +268,11 @@ namespace MyKinectGame
         #region XNA Framework Overrides:
 
         public MyGame() {
-            GraphicsManager = new GraphicsDeviceManager(this);
+            GraphicsManager = new GraphicsDeviceManager(this) {
+                PreferredBackBufferHeight = 600,
+                PreferredBackBufferWidth = 1200
+            };
 
-            GraphicsManager.PreferredBackBufferHeight = 600;
-            GraphicsManager.PreferredBackBufferWidth = 1200;
 
             Content.RootDirectory = "Content";
         }
@@ -317,25 +302,14 @@ namespace MyKinectGame
 
                     // When the camera senses a skeleton "event" in realtime , it pulls in new video frames that we can interpret:
                     Camera.SkeletonFrameReady += OnSkeletonUpdated;
-                    Debug_Camera = "Camera Connected!";
+                    DebugCamera = "Camera Connected!";
                 }
                 else {
-                    Debug_Camera = "No Camera";
+                    DebugCamera = "No Camera";
                 }
             }
             // Set the debug message to update whenever the game state changes:
-            GameState.OnStateActivated += name => { Debug_State = name; };
-
-
-            //Adding Muscles to Muscle Groups 
-            //Groups that use spine
-            SpineMuscleUse.Add(RaiseArm);
-
-            //Groups that use Shoulders 
-            ShoulderMuscleUse.Add(RaiseArm);
-
-
-       
+            GameState.OnStateActivated += name => { DebugState = name; };
 
             // Setup the custom GameStates:
             SetupGameStates();
@@ -351,8 +325,7 @@ namespace MyKinectGame
         }
 
         protected override void UnloadContent() {
-            if (Camera != null)
-                Camera.Stop();
+            Camera?.Stop();
 
             // KM - Release resources that were loaded when unloading:
             Resources.Unload();
@@ -386,11 +359,11 @@ namespace MyKinectGame
             Renderer.Begin();
 
             if (ShowDebug) {
-                Renderer.DrawString(Resources.Fonts.Load("font_copy_custom"), Debug_State, new Vector2(20, 20),
+                Renderer.DrawString(Resources.Fonts.Load("font_copy_custom"), DebugState, new Vector2(20, 20),
                     Color.Green);
-                Renderer.DrawString(Resources.Fonts.Load("font_copy_default"), Debug_Camera, new Vector2(20, 50),
+                Renderer.DrawString(Resources.Fonts.Load("font_copy_default"), DebugCamera, new Vector2(20, 50),
                     Color.Blue);
-                Renderer.DrawString(Resources.Fonts.Load("font_copy_default"), Debug_Skeleton, new Vector2(20, 80),
+                Renderer.DrawString(Resources.Fonts.Load("font_copy_default"), DebugSkeleton, new Vector2(20, 80),
                     Color.Red);
 
                 // Renders the Skeleton on screen for Debugging:
@@ -411,15 +384,15 @@ namespace MyKinectGame
 
         #region Kinect Event Handlers:
 
-        public static Vector2 screenMod {
+        public static Vector2 ScreenModifier {
             get {
-                if (_screenMod == null || _screenMod == Vector2.Zero)
-                    _screenMod = new Vector2(Screen.Width / 2, Screen.Height / 2);
-                return _screenMod;
+                if (_ScreenModifier == null || _ScreenModifier == Vector2.Zero)
+                    _ScreenModifier = new Vector2(Screen.Width / 2, Screen.Height / 2);
+                return _ScreenModifier;
             }
         }
 
-        private static Vector2 _screenMod;
+        private static Vector2 _ScreenModifier;
 
         public class CustomSkeleton {
             public Dictionary<JointType, Vector3> Joints = new Dictionary<JointType, Vector3>();
@@ -429,73 +402,74 @@ namespace MyKinectGame
             public void Set(Skeleton skeleton) {
                 State = skeleton.TrackingState;
 
-                foreach (Joint joint in skeleton.Joints) {
-                    var pos = new Vector3(joint.Position.X, -joint.Position.Y, joint.Position.Z);
-                    if (Joints.ContainsKey(joint.JointType))
-                        Joints[joint.JointType] = pos;
+                foreach (Joint Joint in skeleton.Joints) {
+                    var Pos = new Vector3(Joint.Position.X, -Joint.Position.Y, Joint.Position.Z);
+                    if (Joints.ContainsKey(Joint.JointType))
+                        Joints[Joint.JointType] = Pos;
                     else
-                        Joints.Add(joint.JointType, pos);
+                        Joints.Add(Joint.JointType, Pos);
                 }
             }
 
             public Vector3 ScaleTo(JointType type, float width, float height) {
                 if (!Joints.ContainsKey(type))
                     return Vector3.Zero;
-                return new Vector3(Joints[type].X * width + screenMod.X, Joints[type].Y * height + screenMod.Y,
+                return new Vector3(Joints[type].X * width + ScreenModifier.X, Joints[type].Y * height + ScreenModifier.Y,
                     Joints[type].Z);
             }
         }
 
         private void OnSkeletonUpdated(object sender, SkeletonFrameReadyEventArgs e) {
             // The live feed returns updates from the camera:
-            var skeletonFrame = e.OpenSkeletonFrame();
-            if (skeletonFrame == null)
+            var SkeletonFrame = e.OpenSkeletonFrame();
+            if (SkeletonFrame == null)
                 return;
 
             // Add smoothing to prevent glitching in the skeletons' movements:
-            var raw = new Skeleton[6];
-            skeletonFrame.CopySkeletonDataTo(raw);
-            for (var i = 0; i < raw.Length; i++) {
-                if (raw[i] == null)
+            var Raw = new Skeleton[6];
+            SkeletonFrame.CopySkeletonDataTo(Raw);
+            for (var I = 0; I < Raw.Length; I++) {
+                if (Raw[I] == null)
                     continue;
 
-                if (Skeletons.Count <= i || Skeletons[i] == null) {
+                if (Skeletons.Count <= I || Skeletons[I] == null) {
                     // If this skeleton was just added then set it:
-                    var newSkeleton = new CustomSkeleton();
-                    newSkeleton.Set(raw[i]);
-                    Skeletons.Add(newSkeleton);
+                    var NewSkeleton = new CustomSkeleton();
+                    NewSkeleton.Set(Raw[I]);
+                    Skeletons.Add(NewSkeleton);
                     continue;
                 }
 
                 if (Smoothing > 0f) {
                     // Set the state of the skeleton:
-                    Skeletons[i].State = raw[i].TrackingState;
+                    Skeletons[I].State = Raw[I].TrackingState;
 
                     // Add smoothing interpolation to each point:
-                    foreach (Joint joint in raw[i].Joints) {
-                        var pos = new Vector3();
-                        pos.X = Interpolate(Skeletons[i].Joints[joint.JointType].X, joint.Position.X, Smoothing);
-                        pos.Y = Interpolate(Skeletons[i].Joints[joint.JointType].Y, -joint.Position.Y, Smoothing);
-                        pos.Z = Interpolate(Skeletons[i].Joints[joint.JointType].Z, joint.Position.Z, Smoothing);
+                    foreach (Joint Joint in Raw[I].Joints) {
+                        var Pos = new Vector3 {
+                            X = Interpolate(Skeletons[I].Joints[Joint.JointType].X, Joint.Position.X, Smoothing),
+                            Y = Interpolate(Skeletons[I].Joints[Joint.JointType].Y, -Joint.Position.Y, Smoothing),
+                            Z = Interpolate(Skeletons[I].Joints[Joint.JointType].Z, Joint.Position.Z, Smoothing)
+                        };
 
-                        Skeletons[i].Joints[joint.JointType] = pos;
+                        Skeletons[I].Joints[Joint.JointType] = Pos;
                     }
                 }
                 else {
                     // Store the raw data for the skeleton:
-                    Skeletons[i].Set(raw[i]);
+                    Skeletons[I].Set(Raw[I]);
                 }
             }
 
-            skeletonFrame.Dispose();
+            SkeletonFrame.Dispose();
 
-            if (raw != null && raw.Any(o => o.TrackingState == SkeletonTrackingState.Tracked)) {
+            if (Raw != null && Raw.Any(o => o.TrackingState == SkeletonTrackingState.Tracked)) {
                 SkeletonActive = true;
-                Debug_Skeleton = "Skeleton Found";
+                DebugSkeleton = "Skeleton Found";
             }
             else {
                 SkeletonActive = false;
-                Debug_Skeleton = "No Skeleton Found";
+                DebugSkeleton = "No Skeleton Found";
             }
         }
 

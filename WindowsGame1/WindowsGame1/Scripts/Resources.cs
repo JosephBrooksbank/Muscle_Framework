@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using KinectDemo.Scripts;
 
 namespace MyKinectGame
 {
@@ -11,7 +12,7 @@ namespace MyKinectGame
     {
         public static class Images
         {
-            private static Dictionary<string, Texture2D> Cache = new Dictionary<string, Texture2D>();
+            private static readonly Dictionary<string, Texture2D> Cache = new Dictionary<string, Texture2D>();
 
             public static Texture2D Pixel
             {
@@ -73,7 +74,7 @@ namespace MyKinectGame
 
         public static class Fonts
         {
-            private static Dictionary<string, SpriteFont> Cache = new Dictionary<string, SpriteFont>();
+            private static readonly Dictionary<string, SpriteFont> Cache = new Dictionary<string, SpriteFont>();
             
             /**********************************************************************************************/
             // Utilities:
