@@ -173,32 +173,49 @@ namespace MyKinectGame
             MuscleGroups.CurrentMovement("");
             if (ElbowRightMovement.IsMoving(GetJointPosition(ElbowRightMovement.Joint1, ScreenSpace.World)))
                 MuscleGroups.CurrentMovement("rightarmraise");
-
             if (ElbowLeftMovement.IsMoving(GetJointPosition(ElbowLeftMovement.Joint1, ScreenSpace.World)))
                 MuscleGroups.CurrentMovement("leftarmraise");
             
-           
-            Render.DrawJointConnection(skeleton, JointType.Head, JointType.ShoulderCenter, Renderer, HeadMovement.IsMoving(GetJointPosition(HeadMovement.Joint1, ScreenSpace.World)));
+            if (KneeLeftMovement.IsMoving(GetJointPosition(KneeLeftMovement.Joint1, ScreenSpace.World)) && 
+                !HipCenterMovement.IsMoving(GetJointPosition(HipCenterMovement.Joint1, ScreenSpace.World)))
+                MuscleGroups.CurrentMovement("leftkneeraise");
+            else if (KneeLeftMovement.IsMoving(GetJointPosition(KneeLeftMovement.Joint1, ScreenSpace.World)))
+                MuscleGroups.CurrentMovement("leftkneebend");
+
+            if (KneeRightMovement.IsMoving(GetJointPosition(KneeRightMovement.Joint1, ScreenSpace.World)) && 
+                !HipCenterMovement.IsMoving(GetJointPosition(HipCenterMovement.Joint1, ScreenSpace.World)))
+                MuscleGroups.CurrentMovement("rightkneeraise");
+            else if (KneeRightMovement.IsMoving(GetJointPosition(KneeRightMovement.Joint1, ScreenSpace.World)))
+                MuscleGroups.CurrentMovement("rightkneebend");
+
+
+
+            if (HandRightMovement.IsMoving(GetJointPosition(HandRightMovement.Joint1, ScreenSpace.World)))
+                MuscleGroups.CurrentMovement("rightforearm");
+            if (HandLeftMovement.IsMoving(GetJointPosition(HandLeftMovement.Joint1, ScreenSpace.World)))
+                MuscleGroups.CurrentMovement("leftforearm");
+
+            
+            //Render.DrawJointConnection(skeleton, JointType.Head, JointType.ShoulderCenter, Renderer, HeadMovement.IsMoving(GetJointPosition(HeadMovement.Joint1, ScreenSpace.World)));
 
             Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderRight, Renderer, MuscleGroups.RightShoudlerMovement );
-
-            Render.DrawJointConnection(skeleton, JointType.ShoulderRight, JointType.ElbowRight, Renderer, ElbowRightMovement.IsMoving(GetJointPosition(ElbowRightMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ElbowRight, JointType.HandRight, Renderer, HandRightMovement.IsMoving(GetJointPosition(HandRightMovement.Joint1, ScreenSpace.World)));
             Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.ShoulderLeft, Renderer, MuscleGroups.LeftShoulderMovement);
-            Render.DrawJointConnection(skeleton, JointType.ShoulderLeft, JointType.ElbowLeft, Renderer, ElbowLeftMovement.IsMoving(GetJointPosition(ElbowLeftMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.ElbowLeft, JointType.HandLeft, Renderer, MuscleGroups.LeftArmMovement);
+            Render.DrawJointConnection(skeleton, JointType.ShoulderRight, JointType.ElbowRight, Renderer, MuscleGroups.RightArmMovement);
+            Render.DrawJointConnection(skeleton, JointType.ElbowRight, JointType.HandRight, Renderer, MuscleGroups.RightForearmMovement);
+
+            Render.DrawJointConnection(skeleton, JointType.ShoulderLeft, JointType.ElbowLeft, Renderer, MuscleGroups.LeftArmMovement);
+            Render.DrawJointConnection(skeleton, JointType.ElbowLeft, JointType.HandLeft, Renderer, MuscleGroups.LeftForearmMovement);
 
 
             Render.DrawJointConnection(skeleton, JointType.ShoulderCenter, JointType.HipCenter, Renderer, MuscleGroups.SpineMovement);
 
-
-            Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipRight, Renderer, HipRightMovement.IsMoving(GetJointPosition(HipRightMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.HipRight, JointType.KneeRight, Renderer, KneeRightMovement.IsMoving(GetJointPosition(KneeRightMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.KneeRight, JointType.FootRight, Renderer, FootRightMovement.IsMoving(GetJointPosition(FootRightMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipLeft, Renderer, HipLeftMovement.IsMoving(GetJointPosition(HipLeftMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.HipLeft, JointType.KneeLeft, Renderer, KneeLeftMovement.IsMoving(GetJointPosition(KneeLeftMovement.Joint1, ScreenSpace.World)));
-            Render.DrawJointConnection(skeleton, JointType.KneeLeft, JointType.FootLeft, Renderer, FootLeftMovement.IsMoving(GetJointPosition(FootLeftMovement.Joint1, ScreenSpace.World)));
-           
+            Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipRight, Renderer, MuscleGroups.RightHipMovement);
+            Render.DrawJointConnection(skeleton, JointType.HipRight, JointType.KneeRight, Renderer, MuscleGroups.RightThighMovement);
+            Render.DrawJointConnection(skeleton, JointType.KneeRight, JointType.FootRight, Renderer, MuscleGroups.RightCalfMovement);
+            Render.DrawJointConnection(skeleton, JointType.HipCenter, JointType.HipLeft, Renderer, MuscleGroups.LeftHipMovement);
+            Render.DrawJointConnection(skeleton, JointType.HipLeft, JointType.KneeLeft, Renderer, MuscleGroups.LeftThighMovement);
+            Render.DrawJointConnection(skeleton, JointType.KneeLeft, JointType.FootLeft, Renderer, MuscleGroups.LeftCalfMovement);
+          
             
 
         }
